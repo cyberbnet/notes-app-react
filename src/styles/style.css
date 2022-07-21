@@ -1,0 +1,214 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body{
+  background-color: #202025;
+  color: #fff;
+}
+
+/* note app header */
+.note_app_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #aaa;
+  padding: 16px;
+}
+
+.note_app_header h1{
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* note app body */
+.note_app_body{
+  margin: 30px auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* form */
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px auto;
+}
+
+.form h2{
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.form_title_char_limit{
+  font-size: 14px;
+  text-align: right;
+  color: #aaa;
+}
+
+.form_submit{
+  color: #fff !important;
+}
+
+/* input */
+.input{
+  border: 1px solid #aaa;
+  background-color: transparent;
+  border-radius: 4px;
+  color: #fff;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.input::placeholder,
+.form_submit{
+  color: #aaa;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.input[type="search"]{
+  height: 42px;
+  width: 150px;
+}
+
+.input[type="submit"]{
+  cursor: pointer;
+}
+
+.textarea{
+  min-height: 175px;
+  resize: none;
+}
+
+/* button */
+.button{
+  background-color: transparent;
+  border: none;
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+.button[data-action="Delete"]{
+  color: #ff5f52;
+  border-right: 1px solid #aaa;
+}
+
+.button[data-action="Arsipkan"],
+.button[data-action="Pindahkan"]{
+  color: #fff362;
+}
+
+.button[data-action="Delete"]:hover{
+  color: #b00020;
+}
+
+.button[data-action="Arsipkan"]:hover,
+.button[data-action="Pindahkan"]:hover{
+  color: #c49000;
+}
+
+/* note item */
+.note_item{
+  background-color: transparent;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  overflow: hidden;
+}
+
+.note_item_content{
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.note_item_title{
+  font-weight: 600;
+  color: #fff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.note_item_date{
+  font-size: 12px;
+  color: #aaa;
+}
+
+.note_item_body{
+  font-size: 14px;
+}
+
+.note_item_action{
+  border-top: 1px solid #fff;
+  display: flex;
+}
+
+/* note list & note archive list*/
+.notes_heading{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.notes_list{
+  display: grid;  
+  grid-template-rows: minmax(min-content, max-content);
+  gap: 16px;
+}
+
+.notes_empty{
+  text-align: center;
+  color: #aaa;
+}
+
+@media (min-width: 375px) {
+  .input[type="search"]{
+    width: 200px;
+  }
+}
+
+@media (min-width: 425px) {
+  .form{
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .input[type="search"]{
+    width: 400px;
+  }
+
+  .form{
+    width: 500px;
+  }
+
+  .notes_list{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .notes_list{
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .note_app_body{
+    width: 70%;
+  }
+}
